@@ -19,6 +19,10 @@
             top: 0;
             padding: 10px;
             z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
         }
         h1 {
             color: crimson;
@@ -45,82 +49,44 @@
             max-width: 600px;
             line-height: 1.5;
         }
-    </style>
-</head>
-<body>
-
-    <div class="header">
-        <h1>DAAWAT</h1>
-        <h2>QUALITY • QUANTITY • VARIETY</h2>
-       
-        <div style="margin-left: 80%; display: inline-block;">
-            <i class="fa-solid fa-list"></i>
-            <select>
-                <option>Dine In</option>
-                <option>Delivery</option>
-                <option>Take Away</option>
-            </select>
-        </div>
-    </div>
-    
-    </div>
-
-    <div class="content">
-        <img src="north-indian-cuisine.jpg" alt="Delicious North Indian Cuisine">
-
-        <div class="description">
-            <h3>Daawat – A Feast Awaits! 🍽️✨</h3>
-            <p>
-                Welcome to Daawat, the newest culinary destination serving authentic Indian flavors 
-                in a warm and elegant setting. From royal dum biryanis to flavorful tandoori kebabs, 
-                every dish is crafted with the finest ingredients and rich spices.
-            </p>
-            <ul>
-                <li>✅ Authentic flavors</li>
-                <li>✅ Cozy ambiance</li>
-                <li>✅ Exceptional service</li>
-            </ul>
-            <p>📍 Visit Daawat today for a truly unforgettable dining experience! 🍛🔥</p>
-        </div>
-    </div>
-
-    <h2>20% OFF ON ALL PRODUCTS</h2>
-    <h1>EXPLORE OUR MENU</h1>
-    
-    <div class="menu-container">
-        <div class="menu-item">
-            <img src="LITTI-CHOKHA.jpg" alt="Litti Chokha">
-            <p>Litti Chokha</p>
-        </div>
-        <div class="menu-item">
-            <img src="NAN.jpg" alt="Naan">
-            <p>Naan</p>
-        </div>
-        <div class="menu-item">
-            <img src="PANEER-BUTTER-MASALA.jpg" alt="Paneer Butter Masala">
-            <p>Paneer Butter Masala</p>
-        </div>
-        <div class="menu-item">
-            <img src="PANIPURI.jpg" alt="Pani Puri">
-            <p>Pani Puri</p>
-        </div>
-        <div class="menu-item">
-            <img src="PAV-BHAJI.jpg" alt="Pav Bhaji">
-            <p>Pav Bhaji</p>
-        </div>
-        <div class="menu-item">
-            <img src="PASTA.jpg" alt="Pasta">
-            <p>Pasta</p>
-        </div>
-    </div>
- 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
+        select {
+            padding: 5px;
+            border-radius: 5px;
         }
+        select:hover {
+            background-color: #ddd;
+            cursor: pointer;
+        }
+        
+    
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-item img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
 
         .footer-container {
             display: flex;
@@ -155,13 +121,13 @@
             text-decoration: none;
             color: black;
             font-weight: bold;
+            transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
             color: #FF5733;
         }
 
-   
         .email-input {
             padding: 8px;
             width: 100%;
@@ -171,7 +137,6 @@
             margin-top: 10px;
         }
 
-     
         .social-icons {
             display: flex;
             gap: 15px;
@@ -182,10 +147,12 @@
             font-size: 24px;
             text-decoration: none;
             color: black;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .social-icons a:hover {
             color: #FF5733;
+            transform: scale(1.2);
         }
 
         @media (max-width: 768px) {
@@ -201,21 +168,84 @@
 </head>
 <body>
 
+    <div class="header">
+        <div>
+            <h1>DAAWAT</h1>
+            <h2>QUALITY • QUANTITY • VARIETY</h2>
+        </div>
+       
+        <div>
+            <i class="fa-solid fa-list"></i>
+            <select>
+                <option>Dine In</option>
+                <option>Delivery</option>
+                <option>Take Away</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="content">
+        <img src="north-indian-cuisine.jpg" alt="Delicious North Indian Cuisine">
+
+        <div class="description">
+            <h3>Daawat – A Feast Awaits! 🍽️✨</h3>
+            <p>
+                Welcome to Daawat, the newest culinary destination serving authentic Indian flavors 
+                in a warm and elegant setting. From royal dum biryanis to flavorful tandoori kebabs, 
+                every dish is crafted with the finest ingredients and rich spices.
+            </p>
+            <ul>
+                <li>✅ Authentic flavors</li>
+                <li>✅ Cozy ambiance</li>
+                <li>✅ Exceptional service</li>
+            </ul>
+            <p>📍 Visit Daawat today for a truly unforgettable dining experience! 🍛🔥</p>
+        </div>
+    </div>
+
+    <h2>20% OFF ON ALL PRODUCTS</h2>
+    <h1>EXPLORE OUR MENU</h1>
+
+    <div class="menu-container">
+        <div class="menu-item">
+            <img src="LITTI-CHOKHA.jpg" alt="Litti Chokha">
+            <p>Litti Chokha</p>
+        </div>
+        <div class="menu-item">
+            <img src="Dal-Bati-Churma.jpg" alt="Dal-Bati-Churma">
+            <p>Dal-Bati-Churma</p>
+        </div>
+        <div class="menu-item">
+            <img src="NAN.jpg" alt="Naan">
+            <p>Naan</p>
+        </div>
+        <div class="menu-item">
+            <img src="fried-rice.jpeg" alt="Fried Rice">
+            <p>Fried Rice</p>
+        </div>
+        <div class="menu-item">
+            <img src="PANEER-BUTTER-MASALA.jpg" alt="Paneer Butter Masala">
+            <p>Paneer Butter Masala</p>
+        </div>
+        <div class="menu-item">
+            <img src="PANIPURI.jpg" alt="Pani Puri">
+            <p>Pani Puri</p>
+        </div>
+    </div>
+
     <div class="footer-container">
-   
         <div class="footer-section">
-            <h3>Main Links</h3>
             <ul class="footer-links">
+                <li><a href="#">Main Links</a></li>
                 <li><a href="#">Order Tracking</a></li>
                 <li><a href="#">New Order</a></li>
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">News & Blogs</a></li>
             </ul>
         </div>
-
         <div class="footer-section">
-            <h3>Support</h3>
             <ul class="footer-links">
+                <li><a href==#>Support</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms & Conditions</a></li>
@@ -238,7 +268,6 @@
             </div>
         </div>
     </div>
-
-
 </body>
 </html>
+
