@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+       body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 50%;
+        margin: 0;
+        background-color: #f4f4f4;
+       }
+
+       .heading {
+        text-align: center;
+       }
+
+       .counter {
+        font-size: 50px;
+        height: 200px;
+        width: 200px;
+        margin: -20px;
+        border-radius: 50%;
+        background-color: rgb(61, 99, 58);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border: none;
+       }
+
+       .btn {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        background-color: grey;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+       }
+
+       .reset-btn {
+        background-color: chocolate;
+        padding: 10px 20px;
+        font-size: 20px;
+        margin-top: 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+       }
+
+       .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+       }
+    </style>
+</head>
+<body>
+
+    <h1 class="heading">COUNTER</h1>
+    
+    <button id="counter" class="counter">0</button>
+
+    <div class="button-container">
+        <button onclick="add()" class="btn">+1</button>
+        <button onclick="sub()" class="btn">-1</button>
+    </div>
+
+    <button onclick="reset()" class="reset-btn">Reset</button>
+
+    <script>
+        let count = 0;
+
+        function add() {
+            count++;
+            render();
+        }
+
+        function sub() {
+            count--;
+            render();
+        }
+
+        function reset() {
+            count = 0;
+            render();
+        }
+
+        function render() {
+            document.getElementById('counter').innerText = count;
+        }
+    </script>
+
+</body>
+</html>
