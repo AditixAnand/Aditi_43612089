@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditi Anand | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+      --text-color: #333;
+      --card-bg: rgba(255, 255, 255, 0.9);
+      --accent: #d6336c;
+      --heading: #0077b5;
+    }
+    body.dark {
+      --bg-color: linear-gradient(135deg, #1e1e2f, #121212);
+      --text-color: #eee;
+      --card-bg: rgba(30, 30, 30, 0.8);
+      --accent: #ff79c6;
+      --heading: #66d9ef;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.7;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    header {
+      padding: 50px 20px 30px;
+      text-align: center;
+    }
+    header img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      margin-bottom: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    header img:hover {
+      transform: scale(1.07);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    header p {
+      margin-top: 12px;
+      font-size: 1.1rem;
+      color: var(--text-color);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    h2 {
+      font-size: 1.9rem;
+      color: var(--heading);
+      margin-bottom: 20px;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      margin-top: 5px;
+      border-radius: 2px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 22px;
+      border-radius: 14px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      margin-bottom: 25px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    }
+
+    ul { list-style: none; }
+    ul li { margin: 8px 0; }
+
+    .projects, .skills, .experience, .achievements {
+      display: grid;
+      gap: 20px;
+    }
+
+    .socials {
+      text-align: center;
+      margin: 50px 0;
+    }
+    .socials a {
+      font-size: 32px;
+      margin: 0 15px;
+      color: var(--text-color);
+      transition: transform 0.3s, color 0.3s;
+    }
+    .socials a:hover { transform: scale(1.2); }
+    .fa-linkedin:hover { color: #0077b5; }
+    .fa-github:hover { color: black; }
+    body.dark .fa-github:hover { color: #fff; }
+    .fa-envelope:hover { color: var(--accent); }
+
+    /* Dark Mode Toggle */
+    .toggle-btn {
+      position: fixed;
+      top: 20px; right: 20px;
+      background: var(--card-bg);
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .toggle-btn:hover {
+      transform: scale(1.05);
+      background: var(--accent);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="toggle-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+
+  <header>
+    <img src="pic.jpg" alt="Aditi Anand">
+    <h1>Aditi Anand</h1>
+    <p>AI & Robotics | Full Stack Developer | Problem Solver</p>
+    <p>Sathyabama Institute of Science and Technology, Chennai<br>
+       CGPA : 8</p> 
+  </header>
+
+  <!-- About -->
+  <section>
+    <h2>About Me</h2>
+    <div class="card">
+      <p>Enthusiastic AI and Robotics student with a solid background in Python, Java, and web development. 
+      Experienced in building intelligent systems, full-stack applications, and automation projects. 
+      Skilled at blending technical expertise with creative problem-solving to design user-centered, impactful solutions. 
+      Highly motivated, quality-focused, and a strong collaborator in team environments.</p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Garbage Classification</h3>
+        <p>Developed a deep learning model using EfficientNetV2B2 to classify waste into categories for smarter recycling, 
+        applying preprocessing, model tuning, and deployment.</p>
+      </div>
+      <div class="card">
+        <h3>EventMaster — Smart Event Booking</h3>
+        <p>Built a full-stack web application with role-based access, real-time QR code scanning, and secure booking workflows 
+        to optimize event scheduling and attendee experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills card">
+      <ul>
+        <li><strong>Languages:</strong> Python, Java, HTML, CSS, JavaScript, SQL, DSA</li>
+        <li><strong>Frameworks:</strong> MERN Stack, AWS, IoT</li>
+        <li><strong>Developer Tools:</strong> VS Code, PyCharm, Git, GitHub, Jupyter Notebook, Excel, Ubuntu</li>
+        <li><strong>Design Tools:</strong> AutoCAD, SOLIDWORKS</li>
+        <li><strong>Math & Analytics:</strong> Probability & Statistics</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section>
+    <h2>Work Experience</h2>
+    <div class="experience">
+      <div class="card">
+        <h3>Technical Intern | Edunet Foundation (AICTE + Shell)</h3>
+        <p>Worked on AI-driven projects focusing on sustainability, data visualization, and deep learning workflows. 
+        Gained hands-on experience in model building, optimization, and presenting AI solutions to industry experts.</p>
+      </div>
+      <div class="card">
+        <h3>Software Engineering Job Simulation | Forage</h3>
+        <p>Completed real-world coding tasks involving version control, debugging, and collaborative team projects, 
+        improving problem-solving speed and code quality.</p>
+      </div>
+      <div class="card">
+        <h3>Management Lead | Poetry Club</h3>
+        <p>Coordinated events, workshops, and competitions, fostering creativity and collaboration among student members.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section>
+    <h2>Achievements & Certifications</h2>
+    <div class="achievements">
+      <div class="card">
+        <ul>
+          <li>Finalist - TechXcelerate Hackathon 2025 (BITS Pilani, Hyderabad)</li>
+          <li>Kodacy Virtual Internship</li>
+          <li>Vault of Codes Web Development Internship</li>
+          <li>Edunet AICTE Shell Internship</li>
+          <li>Winner & Participant in Inter-School Competitions (Speech, Olympiads, Quiz, Science Fair, Sports)</li>
+          <li>Additional certifications on <a href="https://www.linkedin.com/in/aditi-anand-745458318/details/certifications/" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Socials -->
+  <div class="socials">
+    <a href="https://www.linkedin.com/in/aditi-anand-745458318/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:aditianand09tkp@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://github.com/AditixAnand" target="_blank"><i class="fab fa-github"></i></a>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+      const btn = document.querySelector(".toggle-btn");
+      if (document.body.classList.contains("dark")) {
+        btn.textContent = "☀️ Light Mode";
+      } else {
+        btn.textContent = "🌙 Dark Mode";
+      }
+    }
+  </script>
+
+</body>
+</html>

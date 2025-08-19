@@ -1,0 +1,19 @@
+
+/* Extra small (phones, <576px) - Default styles */ 
+body { font-size: 14px; } 
+/* Small (≥576px) */ 
+@media (min-width: 576px) {  
+body { font-size: 15px; } 
+} 
+/* Medium (≥768px) */ 
+@media (min-width: 768px) { 
+body { font-size: 16px; } 
+} 
+/* Large (≥992px) */ 
+@media (min-width: 992px) { 
+body { font-size: 17px; } 
+} 
+/* Extra large (≥1200px) */ 
+@media (min-width: 1200px) { 
+body { font-size: 18px; } 
+} 
