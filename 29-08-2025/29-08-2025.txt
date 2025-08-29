@@ -1,13 +1,10 @@
-
 CREATE DATABASE IF NOT EXISTS school;
 USE school;
-
 -- Classes table
 CREATE TABLE classes (
     id INT PRIMARY KEY,
     class_name VARCHAR(50)
 );
-
 -- Students table
 CREATE TABLE students (
     id INT PRIMARY KEY,
@@ -15,21 +12,16 @@ CREATE TABLE students (
     class_id INT,
     FOREIGN KEY (class_id) REFERENCES classes(id)
 );
-
--- Insert data into classes
 INSERT INTO classes (id, class_name) VALUES
 (101, 'Math'),
 (102, 'Physics'),
 (103, 'Chemistry'),
 (104, 'English');
-
--- Insert data into students
 INSERT INTO students (id, name, class_id) VALUES
 (1, 'Alice', 101),
 (2, 'Bob', 102),
-(3, 'Charlie', 103), -- valid
+(3, 'Charlie', 103), 
 (4, 'David', NULL);
-  -- no class assigned
 SELECT s.name, c.class_name
 FROM students s
 INNER JOIN classes c
@@ -58,3 +50,4 @@ ON s1.class_id = s2.class_id AND s1.id < s2.id;
 SELECT s.name, c.class_name
 FROM students s
 CROSS JOIN classes c;
+
