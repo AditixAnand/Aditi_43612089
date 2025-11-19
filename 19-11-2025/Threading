@@ -1,0 +1,83 @@
+Single-Threading
+class SingleThread {
+    public static void main(String[] args) {
+
+        System.out.println("Task 1 running...");
+        for(int i = 1; i <= 5; i++){
+            System.out.println("Counting: " + i);
+        }
+
+        System.out.println("Task 2 running...");
+        for(int i = 1; i <= 3; i++){
+            System.out.println("Message " + i);
+        }
+
+        System.out.println("Single Thread Finished");
+    }
+}
+Multi-Threading
+class MyThread extends Thread {
+    public void run() {
+        for(int i = 1; i <= 5; i++){
+            System.out.println("Child Thread: " + i);
+        }
+    }
+}
+
+class MultiThread {
+    public static void main(String[] args) {
+
+        MyThread t = new MyThread(); 
+        t.start();   // starts new thread
+
+        for(int i = 1; i <= 5; i++){
+            System.out.println("Main Thread: " + i);
+        }
+    }
+}
+Super/Final
+package nov19;
+public class OMRKing3 {
+    public static void main(String[] args) {
+
+        Son1 s1 = new Son1();
+        s1.bike();
+        s1.oldBike();
+
+        Son2 s2 = new Son2();
+        s2.bike();
+        s2.oldBike();
+    }
+}
+
+class GrandFather {
+
+    final void oldBike() {  
+        System.out.println("Royal Enfield 1983 (Grandfather's Final Bike)");
+    }
+}
+
+class Father extends GrandFather {
+
+    void fatherBike() {
+        System.out.println("Royal Enfield 2002 (Father’s Bike)");
+    }
+}
+
+class Son1 extends Father {
+
+    void bike() {
+        System.out.println("KTM 390 (Son1's Bike)");
+        super.fatherBike();
+        super.oldBike();      
+    }
+}
+
+class Son2 extends Father {
+
+    void bike() {
+        System.out.println("RC KTM 390 (Son2's Bike)");
+        super.fatherBike();   
+        super.oldBike();      
+    }
+}
