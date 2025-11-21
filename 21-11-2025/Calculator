@@ -1,0 +1,42 @@
+package nov19;
+
+// Parent class
+class BasicCalculator {
+
+    void add(int a, int b) {
+        System.out.println("Addition: " + (a + b));
+    }
+
+    void subtract(int a, int b) {
+        System.out.println("Subtraction: " + (a - b));
+    }
+}
+
+// Child class
+class AdvancedCalculator extends BasicCalculator {
+
+    void multiply(int a, int b) {
+        System.out.println("Multiplication: " + (a * b));
+    }
+
+    void divide(int a, int b) {
+        if (b == 0) {
+            System.out.println("Cannot divide by zero!");
+        } else {
+            System.out.println("Division: " + (a / b));
+        }
+    }
+}
+
+// Main class
+public class CalculatorInheritance {
+    public static void main(String[] args) {
+
+        AdvancedCalculator calc = new AdvancedCalculator();
+
+        calc.add(10, 20);
+        calc.subtract(40, 15);
+        calc.multiply(5, 6);
+        calc.divide(50, 5);
+    }
+}
